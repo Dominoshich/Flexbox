@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a>
+                    </li>
+                    <li><a href="../index.html"><img src="../img/logo.svg" alt="logo" srcset="" class="logo"></a></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №8</h1>
+                <h2>Тема урока: Порядок элементов flex</h2>
+                <p>В Flexbox также есть возможность менять порядок расположения flex элементов, не влияя на исходный
+                    порядок.
+                    Это ещё одна вещь, которую невозможно сделать традиционными методами CSS.
+                </p>
+
+                <p>Код здесь простой: попробуйте добавить следующий CSS вниз вашего кода примера:</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span>button:first-child</span>{<br>
+                            <span>order</span>: 1;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>и теперь вы увидите, что кнопка «Smile» переместилась в конец главной оси.
+                    Давайте теперь поговорим подробнее о том, как это работает:</p>
+
+                <p>- По умолчанию все элементы flex имеют значение order равное 0.</p>
+                <p class="lesson2_p">- Элементы Flex с установленными на них большими значениями будут отображаться позже в порядке
+                    отображения, чем элементы с меньшими значениями порядка.</p>
+                <p>- Элементы Flex с одинаковым значением порядка будут отображаться в исходном порядке. Так, если у вас
+                    есть четыре элемента с порядковыми значениями 2, 1, 1 и 0, установленными на них соответственно, их
+                    порядок отображения будет 4-й, 2-й, 3-й, затем 1-й.</p>
+                <p>- Третий элемент появляется после второго, потому что он имеет то же значение порядка и находится
+                    после него в порядке написания.</p>
+
+                <p>Вы можете установить отрицательные значения , чтобы элементы отображались раньше, чем элементы с
+                    установленным 0. Например, вы можете сделать, чтобы кнопка «Blush» появлялась в начале основной оси,
+                    используя следующее правило:</p>
+
+                    <div class="listing">
+                        <div class="listing_first_block">
+                            <p>CSS</p>
+                        </div>
+                        <div class="listing_second_block">
+                            <p>
+                                <span>button:last-child </span>{<br>
+                                <span>order</span>: -1;<br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz8.html'">
+                        <input type="submit" value="Следующий урок" onclick="document.location='../lesson/lesson9.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

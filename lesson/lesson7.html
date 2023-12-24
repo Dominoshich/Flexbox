@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a>
+                    </li>
+                    <li><a href="../index.html"><img src="../img/logo.svg" alt="logo" srcset="" class="logo"></a></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №7</h1>
+                <h2>Тема урока: Горизонтальное и вертикальное выравнивание</h2>
+                <p>Flexbox также имеет функции для выравнивания flex элементов вдоль основной (main) или поперечной
+                    (cross)
+                    осей. Рассмотрим их на новом примере — <a
+                        href="https://github.com/mdn/learning-area/blob/main/css/css-layout/flexbox/flex-align0.html">
+                        flex-align0.html</a> (<a
+                        href="https://mdn.github.io/learning-area/css/css-layout/flexbox/flex-align0.html">просмотр</a>)
+                    — который мы превратим в аккуратную,
+                    гибкую кнопочную панель инструментов.
+                    На данный момент вы видите горизонтальную панель меню, кнопки которой застряли в верхнем левом углу.
+                </p>
+                <img src="../img/lesson7.png" alt="lesson7.png" class="lesson2_img">
+                <p>Сначала сделайте себе копию этого примера.</p>
+                <p>Теперь добавьте следующую строку в низ кода CSS:</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block lesson7_listing">
+                        <p>
+                            <span>div</span>{<br>
+                            <span>display</span>: flex;<br>
+                            <span class="lesson4_listing">align-items</span>: center;<br>
+                            <span class="lesson4_listing">justify-content</span>: space-around;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p class="lesson2_p">Обновите страницу, и вы увидите, что кнопки теперь хорошо центрированы, горизонтально и вертикально.
+                    Мы сделали это с помощью двух новых свойств.</p>
+                <p>align-items контролирует, где на поперечной оси находятся flex элементы.</p>
+                <p>- По умолчанию стоит значение stretch, которое растягивает все flex элементы, чтобы заполнить
+                    родителя вдоль поперечной
+                    (cross axis) оси.
+                    Если у родителя нет фиксированной ширины вдоль поперечной оси, все flex элементы примут длину самого
+                    длинного
+                    flex элемента. Вот почему наш первый пример по умолчанию получил столбцы с одинаковой высотой.</p>
+                <p>- Значение center , которое мы использовали в коде вверху, заставляет элементы сохранять свои
+                    собственные размеры, но центрирует их вдоль поперечной оси. Вот почему кнопки текущего примера
+                    центрированы
+                    по вертикали.</p>
+                <p>- Также есть значения flex-start и flex-end, которые выравнивают все элементы по началу и концу
+                    поперечной оси соответственно. См. подробнее align-items.</p>
+                <p>Вы можете переопределить align-items поведение для отдельных flex элементов, применив свойство
+                    align-self к ним.
+                    Например, попробуйте добавить эти строки в код:</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block lesson7_listing2">
+                        <p>
+                            <span>button:first-child </span>{<br>
+                            <span>align-self</span>: flex-end;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>Посмотрите, что произошло и удалите эти строки.</p>
+                <p>justify-content контролирует, где flex элементы располагаются на главной оси.</p>
+                <p>- По умолчанию стоит значение flex-start, которое располагает все элементы в начале главной оси.</p>
+                <p>- Также можно использовать flex-end, чтобы расположить их в конце.</p>
+                <p>- center - также одно из значений justify-content, располагает все элементы по центру главной оси.</p>
+                <p>- Значение, которое мы использовали выше, space-around, весьма полезно — оно распределяет все элементы равномерно по главной оси, с небольшим количеством свободного места на обоих концах.</p>
+                <p>- И ещё одно значение, space-between, которое очень похоже на space-around, за исключением того, что оно не оставляет места на обоих концах.</p>
+
+                <p>Попробуйте немного поиграть с этими значениями прежде чем продолжить</p>
+
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz7.html'">
+                        <input type="submit" value="Следующий урок" onclick="document.location='../lesson/lesson8.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

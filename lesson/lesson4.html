@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a> </li>
+                    <li><a href="../index.html"><img src="../img/logo.svg" alt="logo" srcset="" class="logo"></a></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №4</h1>
+                <h2>Тема урока: Перенос строк</h2>
+                <p>Проблема может быть в том, что, если у вас фиксированная ширина или высота макета, ваши flexbox элементы переполнят контейнер и нарушат макет. Посмотрите на этот пример: <a href="https://github.com/mdn/learning-area/blob/main/css/css-layout/flexbox/flexbox-wrap0.html">flexbox-wrap0.html</a> и <a href="https://mdn.github.io/learning-area/css/css-layout/flexbox/flexbox-wrap0.html">посмотрите его вживую</a>  (сохраните его себе на компьютер, если хотите изучить этот пример):
+                </p>
+                <img src="../img/lesson4.png" alt="lesson4.png" class="lesson2_img">
+                <p>Мы видим, что дочерние элементы выбиваются из своего родителя-контейнера. Один из способов как это исправить — добавить следующее свойство в CSS-правило для &lt;section&gt;:</p>
+            
+                
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span></span><br>
+                            <span>flex-wrap</span>: wrap;<br>
+                            
+                        </p>
+                    </div>
+                </div>
+                <p>Также добавьте следующее свойство в CSS-правило для &lt;arcticle&gt;:</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span></span><br>
+                            <span>flex</span>: 200px;<br>
+                            
+                        </p>
+                    </div>
+                </div>
+                <p>Попробуйте, и вы увидите, что так макет стал выглядеть гораздо лучше:</p>
+                <img src="../img/lesson4second.png" alt="lesson4second.png" class="lesson2_img">
+                <p>Теперь у нас в макете несколько рядов— все дети-блоки, которые не помещаются, переносятся на следующую строку, чтобы не было переполнения. Свойство flex: 200px, установленное на статьях, означает, что каждый блок должен быть минимум 200 пикселей в ширину. Мы обсудим это свойство более подробно позже. Вы также можете заметить, что несколько дочерних блоков в последней строке стали более широкими, так что вся строка стала заполнена.</p>
+               <p>Но мы можем пойти дальше. Прежде всего, попробуйте изменить значение свойства flex-direction на row-reverse — теперь у вас также макет в несколько строк, но он начинается из противоположного угла окна браузера и теперь выстраивается в обратном порядке.</p>
+                <p>На этом этапе нужно заметить, что существует сокращение для свойств flex-direction и flex-wrap — flex-flow. Например, вы можете заменить</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span></span>
+                            <span></span>
+                            <span>flex-direction</span>: row;<br>
+                            <span class="lesson4_listing">flex-wrap</span>: wrap;<br>
+                            
+                        </p>
+                    </div>
+                </div>
+               <p>на</p>
+               <div class="listing">
+                <div class="listing_first_block">
+                    <p>CSS</p>
+                </div>
+                <div class="listing_second_block">
+                    <p>
+                        <span></span><br>
+                        <span>flex-flow</span>: row wrap;<br>
+                        
+                    </p>
+                </div>
+            </div>
+               
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz4.html'">
+                        <input type="submit" value="Следующий урок" onclick="document.location='../lesson/lesson5.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

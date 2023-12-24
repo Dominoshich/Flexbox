@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a>
+                    </li>
+                    <li><a href="../index.html"><img src="../img/logo.svg" alt="logo" srcset="" class="logo"></a></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №5</h1>
+                <h2>Тема урока: Гибкое изменение размеров flex элементов</h2>
+                <p>Теперь давайте вернёмся к нашему первому примеру и посмотрим, как мы можем контролировать,
+                    в каких пропорциях flex элементы будут занимать место.
+                    Включите свою копию файла <a
+                        href="https://github.com/mdn/learning-area/blob/main/css/css-layout/flexbox/flexbox0.html">flexbox0.html</a>,
+                    или скачайте <a
+                        href="https://github.com/mdn/learning-area/blob/main/css/css-layout/flexbox/flexbox1.html">flexbox1.html</a>
+                    (<a href="https://mdn.github.io/learning-area/css/css-layout/flexbox/flexbox1.html">просмотр</a>).
+                </p>
+                <p>Прежде всего, добавим следующее правило в конец вашего CSS кода:</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span>article</span>{<br>
+                            <span>flex</span>: 1;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>Это безразмерное значение пропорции, которое указывает, сколько свободного пространства на главной
+                    оси (main axis) каждый flex элемент сможет занять. В этом случае, мы даём каждому элементу &lt;article&gt;
+                        значение 1, а это значит, что они будут занимать равное количество свободного места в макете,
+                        которое осталось после установки свойств padding и margin.</p>
+
+
+                <p>Теперь добавьте следующее правило в строку после предыдущего:</p>
+
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span>article:nth-of-type(3)</span>{<br>
+                            <span>flex</span>: 2;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>Обновив страницу, вы увидите, что третий элемент &lt;article&gt; занимает
+                    в два раза больше доступной ширины, чем два других — итого теперь доступно 4
+                    единицы пропорции. Первые два flex элемента имеют по одной единице, поэтому берут 1/4
+                    пространства каждый.
+                    А у третьего 2 единицы, так что он берёт 2/4 свободного места (или 1/2).</p>
+                <p>Вы также можете указать минимальный размер внутри значения flex. Попробуйте изменить
+                    существующие правила, добавив размеры:</p>
+                <div class="listing ">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block lesson5_listing_second">
+                        <p>
+                            <span>article</span>{<br>
+                            <span>flex</span>: 1 200px;<br>
+                            }
+                        </p>
+                        <p>
+                            <span>article:nth-of-type(3)</span>{<br>
+                            <span>flex</span>: 2 200px;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>Это просто означает, что каждому flex элементу сначала будет дано 200px от
+                    свободного места. Потом оставшееся место будет поделено в соответствии с частями
+                    пропорций. Обновите страницу, и вы увидите разницу, как пространство поделено теперь.</p>
+                <img src="../img/lesson5.png" alt="lesson5.png" class="lesson2_img">
+                <p>Настоящая ценность flexbox можно увидеть в его гибкости/отзывчивости — если изменить размер окна
+                    или добавить ещё элемент
+                    &lt;article&gt;, макет будет и дальше выглядеть также хорошо.</p>
+
+                <p>Так, всего одно объявление делает всё, что нам нужно — здорово, правда? Мы получили 3-х колоночный
+                    макет с колонками равных размеров по ширине и высоте.
+                    Это связано с тем, что значения по умолчанию, заданные для flex элементов (дочерние элементы flex
+                    контейнера),
+                    настроены для решения основных задач. Подробнее об этом позже.
+                    <br><br>
+                    Примечание: вы также можете установить значение display inline-flex, если хотите расставить inline
+                    элементы как flex блоки.
+                </p>
+
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz5.html'">
+                        <input type="submit" value="Следующий урок" onclick="document.location='../lesson/lesson6.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

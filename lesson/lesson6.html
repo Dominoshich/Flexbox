@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a> </li>
+                    <li><img src=".../img/logo.svg" alt="logo" srcset="" class="logo"></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №6</h1>
+                <h2>Тема урока: flex: краткий код против развёрнутого</h2>
+                <p>flex это сокращённое свойство, в которым можно задать до трёх разных свойств:
+                </p>
+                <p>1. Значение пропорции, которое мы обсуждали выше. Оно может быть установлено отдельно с помощью свойства flex-grow.</p>
+                <p>2. Следующее значение пропорции — flex-shrink — вступает в роль, когда flex элементы переполняют контейнер. 
+                    Оно указывает, сколько забирается от размера каждого flex элемента, чтобы он перестал переполнять контейнер.
+                     Это продвинутая функция flexbox, и в этом параграфе мы не будем её разбирать.</p>
+                <p>3. Значение минимального размера, как мы обсуждали ранее. Оно может быть установлено отдельно
+                     с помощью свойства flex-basis.</p>
+                     <p>Мы не советуем использовать развёрнутые свойства flex, если вам в действительности это не нужно (например, переопределить ранее установленное). 
+                        Они приводят к написанию большого количества дополнительного кода и могут запутать кого угодно.</p>
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz6.html'">
+                        <input type="submit" value="Следующий урок" onclick="document.location='../lesson/lesson7.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

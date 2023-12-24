@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true" />
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="obertka_head">
+
+            <div class="wrap not_there">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox">Документация</a>
+                    </li>
+                    <li><a href="../index.html"><img src="../img/logo.svg" alt="logo" srcset="" class="logo"></a></li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="obertka_block_second">
+            <div class="main-block">
+                <h1>Урок №9</h1>
+                <h2>Тема урока: Вложенные flex блоки</h2>
+                <p>Можно создать несколько довольно сложных макетов с помощью flexbox. Совершенно нормально сделать flex
+                    элемент flex контейнером, чтобы его потомки также были flex блоками. Посмотрите на
+                    <a
+                        href="https://github.com/mdn/learning-area/blob/main/css/css-layout/flexbox/complex-flexbox.html">complex-flexbox.html</a>
+                    (<a href="https://mdn.github.io/learning-area/css/css-layout/flexbox/complex-flexbox.html">см.
+                        вживую</a>).
+                </p>
+                <img src="../img/lesson9.png" alt="lesson9.png" class="lesson2_img">
+                <p>HTML для этого довольно простой. У нас есть элемент &lt;section&gt;, содержащий три &lt;article&gt;.
+                    Третий
+                    &lt;article&gt; содержит ещё три &lt;div&gt;.</p>
+
+                <div class="listing">
+                    <div class="listing_second_block lesson9_listing">
+                        <p>
+                            <span class="lesson9_listing_black">section</span> - <span>article</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>article</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>article</span>
+                            - <span>div </span> - <span>button</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>div
+                            </span>&nbsp;&nbsp;&nbsp;<span>button</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>div
+                            </span>&nbsp;&nbsp;&nbsp;<span>button</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>button</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>button</span><br>
+
+
+
+                        </p>
+                    </div>
+                </div>
+                <p>Давайте посмотрим на код, который мы использовали для макета.</p>
+                <p class="lesson2_p">Прежде всего, мы устанавливаем дочерние элементы &lt;section&gt; в виде flex блоков.</p>
+
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block">
+                        <p>
+                            <span>section</span>{<br>
+                            <span>display</span>: flex;<br>
+                            }
+                        </p>
+
+                    </div>
+                </div>
+                <p>Затем мы устанавливаем несколько значений на самих &lt;article&gt;. Обратите внимание на второе
+                    правило: мы
+                    устанавливаем третий &lt;article&gt;, чтобы его дети были в макете в виде flex блоков, но на этот
+                    раз
+                    мы располагаем их как столбец.</p>
+
+
+
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block lesson9_listing_second">
+                        <p>
+                            <span>article</span>{<br>
+                            <span>flex</span>: 1 200px;<br>
+                            <span class="lesson4_listing">align-items</span>: center;<br>
+                            <span class="lesson4_listing">justify-content</span>: space-around;<br>
+                            }
+                        </p>
+                        <p> <span>article:nth-of-type(3) </span>{<br>
+                            <span>flex</span>: 3 200px;<br>
+                            <span class="lesson4_listing">display</span>: flex;<br>
+                            <span class="lesson4_listing">flex-flow</span>: column;<br>
+                            }</p>
+                    </div>
+                </div>
+                <p>Затем мы берём первый &lt;div&gt;. Сначала мы пишем flex: 1 100px; чтобы дать ему минимальную высоту
+                    100px,
+                    потом мы устанавливаем его дочерние элементы (элементы &lt;button&gt;) также в виде flex блоков. Им
+                    мы
+                    назначаем перенос блоков и выравниваем их по центру доступного пространства, как это было в
+                    примере с кнопкой.</p>
+                <div class="listing">
+                    <div class="listing_first_block">
+                        <p>CSS</p>
+                    </div>
+                    <div class="listing_second_block lesson9_listing_third">
+                        <p>
+                            <span>article:nth-of-type(3) div:first-child</span>{<br>
+                            <span>flex</span>: 1 100px;<br>
+                            <span class="lesson4_listing">display</span>: flex;<br>
+                            <span class="lesson4_listing">flex-flow</span>: row wrap;<br>
+                            <span class="lesson4_listing">align-items</span>: center;<br>
+                            <span class="lesson4_listing">justify-content</span>: space-around;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+                <p>Наконец, мы устанавливаем размер кнопке, мы даём ему значение flex 1. Это даёт очень интересный
+                    эффект, который вы увидите, если попытаетесь изменить размер ширины окна браузера. Кнопки занимают
+                    столько места, сколько могут, и сидят на одной линии также, сколько могут. Если же они не могут
+                    комфортно расположиться на одной линии, они перепрыгнут на новые строки.</p>
+                    <div class="listing">
+                        <div class="listing_first_block">
+                            <p>CSS</p>
+                        </div>
+                        <div class="listing_second_block lesson9_listing_fourth">
+                            <p>
+                                <span>button </span>{<br>
+                                <span>flex</span>: 1 auto;<br>
+                                <span class="lesson4_listing">margin</span>: 5px;<br>
+                                <span class="lesson4_listing">font-size</span>: 18px;<br>
+                                <span class="lesson4_listing">line-height</span>: 1.5;<br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                
+                <div class="inputs_lesson">
+                    <div class="inputs_of_results plus_width lesson9_button">
+                        <input type="submit" value="Перейти к тесту" onclick="document.location='../quizes/quiz9.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="obertka_footer">
+
+            <div class="footer_wrap">
+                <ul>
+                    <li><a href="../index.html">Главная</a> </li>
+                    <li><a href="../theory.html">Теория</a> </li>
+                    <li><a href="../tests.html">Тесты</a></li>
+                </ul>
+                <p>Разработчик: Черепанов Ярослав</p>
+            </div>
+
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>
